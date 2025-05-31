@@ -52,6 +52,7 @@ app.get('/user', (req, res) => {
 // Accepts GET /run-cmd?cmd=<value>
 app.get('/run-cmd', (req, res) => {
   const userCmd = req.query.cmd; 
+  console.log("userCmd try");
   // **VULNERABLE:** Directly inserting user input into a shell command
   exec(`ls ${userCmd}`, (error, stdout, stderr) => {
     if (error) {
@@ -99,6 +100,7 @@ app.get('/greet', (req, res) => {
 // ------------------------------------------------------------
 // Accepts POST /calculate with JSON body: { "expr": "<expression>" }
 app.post('/calculate', (req, res) => {
+    console.log(req.body);
   const expression = req.body.expr;
   // **VULNERABLE:** Using eval on user-supplied expression
   try {

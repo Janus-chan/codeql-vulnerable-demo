@@ -1,0 +1,7 @@
+# If anything in the `vulnerable-app/` folder changes, 
+# automatically request a review from alice and the security-team
+
+/vulnerable-app/*    @alice-dev @my-org/security-team   @Jain9384
+
+# For any change to CI workflows, request a review from bcarlos:
+/.github/workflows/* @bcarlos

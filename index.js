@@ -99,6 +99,7 @@ app.get('/greet', (req, res) => {
 // ------------------------------------------------------------
 // Accepts POST /calculate with JSON body: { "expr": "<expression>" }
 app.post('/calculate', (req, res) => {
+    console.log(req.body);
   const expression = req.body.expr;
   // **VULNERABLE:** Using eval on user-supplied expression
   try {

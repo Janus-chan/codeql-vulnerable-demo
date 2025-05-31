@@ -52,6 +52,7 @@ app.get('/user', (req, res) => {
 // Accepts GET /run-cmd?cmd=<value>
 app.get('/run-cmd', (req, res) => {
   const userCmd = req.query.cmd; 
+  console.log(userCmd);
   // **VULNERABLE:** Directly inserting user input into a shell command
   exec(`ls ${userCmd}`, (error, stdout, stderr) => {
     if (error) {
